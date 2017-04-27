@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <form>
+        <fieldset class="form-group row">
+            <legend class="col-form-legend col-sm-1-12">Request New Database Field Number</legend>
+            <div class="col-sm-1-12">
+                <div class="form-group">
+                <label for="columnName">Column Name</label>
+                <input type="text"
+                    class="form-control" name="columnName" id="columnName" aria-describedby="helpId" placeholder="NewDbFieldColumn" required>
+                <small id="helpId" class="form-text text-muted">Column name for the new DB Field.</small>
+                </div>
+                <div class="form-group">
+                <label for="tableName">Table Name</label>
+                <input type="text"
+                    class="form-control" name="tableName" id="tableName" aria-describedby="helpId" placeholder="U_LN_MyTable" required>
+                <small id="helpId" class="form-text text-muted">Parent table for the new column.</small>
+                </div>
+                <div class="form-group">
+                <label for="dataType">Data Type</label>
+                <select class="form-control" name="dataType" id="dataType" required>
+                    <option value="-1">Select Data Type</option>
+                    <option value="1">String</option>
+                    <option value="2">Integer</option>
+                    <option value="3">Date Time</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="dbSize">String Size (if applicable)</label>
+                <input type="number"
+                    class="form-control" name="dbSize" id="dbSize" aria-describedby="helpId" placeholder="255">
+                <small id="helpId" class="form-text text-muted">If data type is String, provide a max size.</small>
+                </div>
+                <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                <label for="">Audit Flag</label>
+                <input type="text"
+                    class="form-control" name="auditFlag" id="auditFlag" aria-describedby="helpId" placeholder="'N'">
+                <small id="helpId" class="form-text text-muted">Defaults to 'N' if left empty.</small>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn">Reset</button>
+                <a type="reset" class="btn" [routerLink]="['/home']">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

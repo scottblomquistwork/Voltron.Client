@@ -1,0 +1,14 @@
+.jumbotron {
+    margin-top: 2rem;
+}
+
+div.card-group {
+    padding: 2rem;
+}
+
+.card {
+    padding: 2rem;
+    background-color: #485563;
+    color: white;
+    border: 2px solid #DB402E;
+}

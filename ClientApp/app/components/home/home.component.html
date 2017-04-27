@@ -1,0 +1,36 @@
+<div class="jumbotron">
+    <h1 class="display-3">Ready to Form Voltron!</h1>
+    <p class="lead">This is where dev tools come together and give us the power!</p>
+    <hr class="my-2">
+</div>
+<h3>Purpose</h3>
+<p>
+    This application will be used to develop and host Loan Depot Empower Development team's internal tools and applications.
+</p>
+
+<h3>About</h3>
+<p>
+This application is written with an Angular2 front end, supported by a .net core web API backend. To add your application, add a new angular component to access your application's UI and a new 'li' routing tag to the navmenu.component.html.
+This application will support calling external apis through HTTP as well as routing to network locations to install internal desktop apps.
+</p>
+
+<hr>
+
+<div class="card-group row text-center">
+    <div class="card col-md-6">
+        <img class="card-img-top" src="/assets/voltronlogo.png" alt="Card image cap">
+        <div class="card-block">
+            <h3 class="card-title">Counter Example</h3>
+            <p class="card-text">Simple incrementer component.</p>
+            <a [routerLink]="['/counter']" class="btn btn-primary">Launch App</a>
+        </div>
+    </div>
+    <div class="card col-md-6">
+        <img class="card-img-top" src="/assets/voltronlogo.png" alt="Card image cap">
+        <div class="card-block">
+            <h3 class="card-title">Get Weather Data Example</h3>
+            <p class="card-text">This component shows us how to call an API and bind the returned data from Angular.</p>
+            <a [routerLink]="['/fetch-data']" class="btn btn-primary">Launch App</a>
+        </div>
+    </div>
+</div>
