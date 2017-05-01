@@ -9,17 +9,20 @@ namespace Voltron.Client.Services
         private DatabaseFieldContext DbContext;
         public DatabaseFieldRequests()
         {
-
+            DbContext = new DatabaseFieldContext();
         }
 
         public DatabaseField GetDatabaseField(int id)
         {
-            throw new NotImplementedException();
+            var field = DbContext.GetDatabaseField(id);
+            return field;
         }
 
         public DatabaseField RequestNewDatabaseField(DatabaseField newField)
         {
-            throw new NotImplementedException();
+            newField = new DatabaseField("column", "table", "description", 'N', EmpowerDatabaseType.DbInteger, null); 
+            var returnedField  = DbContext.AddDatabaseField(newField);
+            return returnedField;
         }
     }
 }

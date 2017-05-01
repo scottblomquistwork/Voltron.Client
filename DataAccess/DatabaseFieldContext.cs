@@ -6,7 +6,7 @@ namespace Voltron.Client.DataAccess
 {
     public class DatabaseFieldContext : IDatabaseFieldContext
     {
-        public DatabaseField AddDatabaseField()
+        public DatabaseField AddDatabaseField(DatabaseField newField)
         {
             throw new NotImplementedException();
         }
@@ -16,7 +16,7 @@ namespace Voltron.Client.DataAccess
             throw new NotImplementedException();
         }
 
-        public DatabaseField GetDatabaseField()
+        public DatabaseField GetDatabaseField(int id)
         {
             var field = new DatabaseField("column", "table", "description", 'N', EmpowerDatabaseType.DbInteger, null); 
             return field;

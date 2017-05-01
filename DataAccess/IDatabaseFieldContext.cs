@@ -6,7 +6,7 @@ namespace Voltron.Client.DataAccess
     public interface IDatabaseFieldContext
     {
          IList<DatabaseField> GetAllDatabaseFields();
-         DatabaseField GetDatabaseField();
-         DatabaseField AddDatabaseField();
+         DatabaseField GetDatabaseField(int id);
+         DatabaseField AddDatabaseField(DatabaseField newField);
     }
 }
