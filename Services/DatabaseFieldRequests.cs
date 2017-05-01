@@ -1,16 +1,23 @@
 using System;
 using Voltron.Client.Models;
+using Voltron.Client.DataAccess;
 
 namespace Voltron.Client.Services
 {
     public class DatabaseFieldRequests : IDatabaseFieldRequests
     {
-        DatabaseField IDatabaseFieldRequests.GetDatabaseField(int id)
+        private DatabaseFieldContext DbContext;
+        public DatabaseFieldRequests()
+        {
+
+        }
+
+        public DatabaseField GetDatabaseField(int id)
         {
             throw new NotImplementedException();
         }
 
-        DatabaseField IDatabaseFieldRequests.RequestNewDatabaseField(DatabaseField newField)
+        public DatabaseField RequestNewDatabaseField(DatabaseField newField)
         {
             throw new NotImplementedException();
         }

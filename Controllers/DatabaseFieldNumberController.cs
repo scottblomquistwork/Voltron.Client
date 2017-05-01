@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Voltron.Client.Models;
+using Voltron.Client.Services;
 
 namespace Voltron.Client.Controllers
 {
@@ -10,9 +12,11 @@ namespace Voltron.Client.Controllers
     public class DatabaseFieldNumberController
     {
         [HttpGet("[action]")]
-        public int DBFinder(int id)
+        public DatabaseField DBFinder(int id)
         {
-            return 123;
+            var dbFieldService = new DatabaseFieldRequests();
+            var field = dbFieldService.GetDatabaseField(id);
+            return field;
         }
 
         [HttpPost("[action]")]

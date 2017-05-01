@@ -6,19 +6,20 @@ namespace Voltron.Client.DataAccess
 {
     public class DatabaseFieldContext : IDatabaseFieldContext
     {
-        DatabaseField IDatabaseFieldContext.AddDatabaseField()
+        public DatabaseField AddDatabaseField()
         {
             throw new NotImplementedException();
         }
 
-        IList<DatabaseField> IDatabaseFieldContext.GetAllDatabaseFields()
+        public IList<DatabaseField> GetAllDatabaseFields()
         {
             throw new NotImplementedException();
         }
 
-        DatabaseField IDatabaseFieldContext.GetDatabaseField()
+        public DatabaseField GetDatabaseField()
         {
-            throw new NotImplementedException();
+            var field = new DatabaseField("column", "table", "description", 'N', EmpowerDatabaseType.DbInteger, null); 
+            return field;
         }
     }
 }
