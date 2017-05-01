@@ -19,7 +19,7 @@ namespace Voltron.Client.Models
     }
     public class DatabaseField
     {
-        public 
+        public int DbFieldNumber { get; set; }
         public string ColumnName { get; set; }
         public string TableName { get; set; }
         public string Description { get; set; }
@@ -28,26 +28,38 @@ namespace Voltron.Client.Models
         public int? StringSize { get; set; }
         public DateTime LastModified { get; set; }
         public string Picture { get; set; }
-        public int PictureType { get; set; }
-        public float MinValue { get; set; }
-        public float MaxValue { get; set; }
+        public int? PictureType { get; set; }
+        public float? MinValue { get; set; }
+        public float? MaxValue { get; set; }
         public string Notes { get; set; }
         public string XmlTag { get; set; }
 
-        public DatabaseField()
-        {
-
-        }
+        public DatabaseField() {}
 
         public DatabaseField(string column, string table, string description, char auditFlag, 
-                             EmpowerDatabaseType databaseType, int? stringSize)
+                             EmpowerDatabaseType databaseType, int? stringSize) 
+                        : this(-1, column, table, description, 
+                                auditFlag, databaseType, stringSize, null, null, null, null, null, 
+                                DateTime.Now, $"{table}.{column}") {}
+
+        public DatabaseField(int dbNumber, string column, string table, string description, char auditFlag, 
+                             EmpowerDatabaseType databaseType, int? stringSize, string notes, float? minValue, 
+                             float? maxValue, string picture, int? pictureType, DateTime lastModified, string xmlTag)
         {
-            this.ColumnName = column;
-            this.TableName = table;
-            this.Description = description;
-            this.AuditFlag = String.IsNullOrEmpty(auditFlag.ToString()) ? 'N' : auditFlag;
-            this.DatabaseType = databaseType;
-            this.StringSize = ValidateStringSize(databaseType, stringSize);
+            DbFieldNumber = dbNumber;
+            ColumnName = column;
+            TableName = table;
+            Description = description;
+            AuditFlag = String.IsNullOrEmpty(auditFlag.ToString()) ? 'N' : auditFlag;
+            DatabaseType = databaseType;
+            StringSize = ValidateStringSize(databaseType, stringSize);
+            Notes = notes;
+            MinValue = minValue;
+            MaxValue = maxValue;
+            Picture = picture;
+            PictureType = pictureType;
+            LastModified = lastModified;
+            XmlTag = string.IsNullOrEmpty(xmlTag) ? $"{table}.{column}" : xmlTag;
         }
 
         private int? ValidateStringSize(EmpowerDatabaseType type, int? size)
@@ -61,12 +73,20 @@ namespace Voltron.Client.Models
 
         public override string ToString()
         {
-            return $"ColumnName: {ColumnName}{Environment.NewLine}"
+            return $"DBFieldNumber: {DbFieldNumber}{Environment.NewLine}"
+            + $"ColumnName: {ColumnName}{Environment.NewLine}"
             + $"TableName: {TableName}{Environment.NewLine}"
             + $"Description: {Description}{Environment.NewLine}"
             + $"AudtiFlag: {AuditFlag}{Environment.NewLine}"
             + $"DatabaseType: {DatabaseType}{Environment.NewLine}"
-            + $"StringSize: {StringSize?.ToString() ?? "N/A"}{Environment.NewLine}";
+            + $"StringSize: {StringSize}{Environment.NewLine}"            
+            + $"Notes: {Notes}{Environment.NewLine}"
+            + $"MinValue: {MinValue}{Environment.NewLine}"
+            + $"MaxValue: {MaxValue}{Environment.NewLine}"
+            + $"Picture: {Picture}{Environment.NewLine}"
+            + $"PictureType: {PictureType}{Environment.NewLine}"
+            + $"XmlTag: {XmlTag}{Environment.NewLine}"
+            + $"LastModified: {LastModified}{Environment.NewLine}";
         }
     }
 }

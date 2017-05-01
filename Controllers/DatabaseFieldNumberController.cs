@@ -15,7 +15,7 @@ namespace Voltron.Client.Controllers
             return 123;
         }
 
-        [HttpPost("[actions]")]
+        [HttpPost("[action]")]
         public void DBFieldNumberRequest(){
 
         }
