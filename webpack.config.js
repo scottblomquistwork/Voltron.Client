@@ -3,6 +3,12 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 
+// TODO: Update this webpack to four files -
+// 1. webpack.common.config.js  - common configurations
+// 2. webpack.dev.config.js     - dev environment configs
+// 3. webpack.prod.config.js    - productions environment configs
+// 4. webpack.test.config.js    - karma test configs
+
 module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const isDevBuild = !(env && env.prod);

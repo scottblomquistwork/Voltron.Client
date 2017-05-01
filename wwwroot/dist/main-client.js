@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a060c5eabbd11bf287db"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "25be72a730b03ff46191"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1517,12 +1517,12 @@ AppModule = __decorate([
         imports: [
             angular2_universal_1.UniversalModule,
             router_1.RouterModule.forRoot([
-                { path: "", redirectTo: "home", pathMatch: "full" },
-                { path: "home", component: home_component_1.HomeComponent },
-                { path: "counter", component: counter_component_1.CounterComponent },
-                { path: "fetch-data", component: fetchdata_component_1.FetchDataComponent },
-                { path: "dbfieldnumber", component: dbFieldNumber_component_1.DbFieldNumberComponent },
-                { path: "**", redirectTo: "home" }
+                { path: '', redirectTo: 'home', pathMatch: 'full' },
+                { path: 'home', component: home_component_1.HomeComponent },
+                { path: 'counter', component: counter_component_1.CounterComponent },
+                { path: 'fetch-data', component: fetchdata_component_1.FetchDataComponent },
+                { path: 'dbfieldnumber', component: dbFieldNumber_component_1.DbFieldNumberComponent },
+                { path: '**', redirectTo: 'home' }
             ])
         ]
     })
@@ -1551,7 +1551,7 @@ var AppComponent = (function () {
 }());
 AppComponent = __decorate([
     core_1.Component({
-        selector: "app",
+        selector: 'app',
         template: __webpack_require__(24),
         styles: [__webpack_require__(34)]
     })
@@ -1584,7 +1584,7 @@ var CounterComponent = (function () {
 }());
 CounterComponent = __decorate([
     core_1.Component({
-        selector: "counter",
+        selector: 'counter',
         template: __webpack_require__(25)
     })
 ], CounterComponent);
@@ -1617,7 +1617,7 @@ var DbFieldNumberComponent = (function () {
 }());
 DbFieldNumberComponent = __decorate([
     core_1.Component({
-        selector: "app-dbFieldNumber",
+        selector: 'app-dbFieldNumber',
         template: __webpack_require__(26),
         styles: [__webpack_require__(35)]
     }),
@@ -1647,7 +1647,7 @@ var http_1 = __webpack_require__(40);
 var FetchDataComponent = (function () {
     function FetchDataComponent(http) {
         var _this = this;
-        http.get("/api/SampleData/WeatherForecasts").subscribe(function (result) {
+        http.get('/api/SampleData/WeatherForecasts').subscribe(function (result) {
             _this.forecasts = result.json();
         });
     }
@@ -1655,7 +1655,7 @@ var FetchDataComponent = (function () {
 }());
 FetchDataComponent = __decorate([
     core_1.Component({
-        selector: "fetchdata",
+        selector: 'fetchdata',
         template: __webpack_require__(27)
     }),
     __metadata("design:paramtypes", [http_1.Http])
@@ -1684,7 +1684,7 @@ var HomeComponent = (function () {
 }());
 HomeComponent = __decorate([
     core_1.Component({
-        selector: "home",
+        selector: 'home',
         template: __webpack_require__(28),
         styles: [__webpack_require__(36)]
     })
@@ -1713,7 +1713,7 @@ var NavMenuComponent = (function () {
 }());
 NavMenuComponent = __decorate([
     core_1.Component({
-        selector: "nav-menu",
+        selector: 'nav-menu',
         template: __webpack_require__(29),
         styles: [__webpack_require__(37)]
     })
